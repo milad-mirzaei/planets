@@ -107,7 +107,7 @@ const App = () => {
       </div>
       <div className="h-[25vh] w-full flex flex-row  items-center justify-center px-3 gap-5">
         {planets.map((planet, index) =>
-          planets[index] == "" ? (
+          planets[index] === "" ? (
             <div
               className="w-[70px] h-[70px] rounded-full border-dashed border-[4px] border-gray-400"
               key={index}
