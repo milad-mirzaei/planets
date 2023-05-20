@@ -83,7 +83,7 @@ const App = () => {
             onDragStart={(e) => handleOnDrag(e, item.name)}
             key={index}
           >
-            <img src={item.image} />
+            <img src={item.image} alt="planet"/>
           </div>
           <div className="bg-gray-200 px-3 rounded-lg">
 
@@ -120,6 +120,7 @@ const App = () => {
             <div className="w-[70px] h-[70px] rounded-full" key={index}>
               <img
               src={`images/${planet}.png`}
+              alt="planet"
                 // src={planetObjects.find((element) => {
                 //   if (element.name == planet) {
                 //     return element.image;
