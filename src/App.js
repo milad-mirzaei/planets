@@ -42,9 +42,18 @@ const App = () => {
     newPlanets[index] = planet;
     setPlanets([...newPlanets]);
   };
-  
+
   const handleDragOver = (e) => {
     e.preventDefault();
+    e.target.style.borderColor='orange';
+    e.target.style.height='80px';
+    e.target.style.width='80px';
+    e.target.style.translate='rotate(180deg)';
+  };
+  const handleDragLeave = (e) => {
+    e.target.style.borderColor='#bdbdbd';
+    e.target.style.height='70px';
+    e.target.style.width='70px';
   };
 
   const handleTrue = () => {
@@ -92,10 +101,11 @@ const App = () => {
         {planets.map((planet, index) =>
           planets[index] === "" ? (
             <div
-              className="w-[70px] h-[70px] rounded-full border-dashed border-[4px] border-gray-400"
+              className="w-[70px] h-[70px] rounded-full border-dashed border-[4px] border-[#bdbdbd] transition-all duration-300"
               key={index}
               onDrop={(e) => handleOnDrop(e, index)}
               onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
             ></div>
           ) : (
             <div className="flex flex-col items-center gap-2">
